@@ -39,27 +39,19 @@ class MainActivity : AppCompatActivity() {
 
                 if(p0!!.length == 1 && before.length < p0.length) {
                     imageView.setImageDrawable(resources.getDrawable(R.drawable.anim_step1))
-                    animationCurrent = imageView.drawable as AnimationDrawable
-                    animationCurrent.isOneShot = true
-                    animationCurrent.start()
+                    animationDrawable()
                 }
                 if (p0.length == 0 && before.length > p0.length) {
                     imageView.setImageDrawable(resources.getDrawable(R.drawable.anim_step1_reverse))
-                    animationCurrent = imageView.drawable as AnimationDrawable
-                    animationCurrent.isOneShot = true
-                    animationCurrent.start()
+                    animationDrawable()
                 }
                 if (p0.length == 5 && before.length < p0.length){
                     imageView.setImageDrawable(resources.getDrawable(R.drawable.anim_step2))
-                    animationCurrent = imageView.drawable as AnimationDrawable
-                    animationCurrent.isOneShot = true
-                    animationCurrent.start()
+                    animationDrawable()
                 }
                 if (p0.length == 5 && before.length > p0.length){
                     imageView.setImageDrawable(resources.getDrawable(R.drawable.anim_step2_reverse))
-                    animationCurrent = imageView.drawable as AnimationDrawable
-                    animationCurrent.isOneShot = true
-                    animationCurrent.start()
+                    animationDrawable()
                 }
 
                 //continue
@@ -67,6 +59,12 @@ class MainActivity : AppCompatActivity() {
 
         })
 
+    }
+
+    private fun animationDrawable() {
+        animationCurrent = imageView.drawable as AnimationDrawable
+        animationCurrent.isOneShot = true
+        animationCurrent.start()
     }
 
 
